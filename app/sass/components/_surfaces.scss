@@ -1,0 +1,129 @@
+.surfaces {
+  padding-bottom: 10rem;
+  .surfaces__inner {
+    display: flex;
+    flex-direction: column;
+    height: 78rem;
+    @include min-l {
+      flex-direction: row;
+      height: 38rem;
+    }
+  }
+
+  .surfaces__section {
+    position: relative;
+    width: 100%;
+    height: calc(100% * 1/3);
+    transition: all 1s $cubic3;
+    opacity: 0;
+    &:nth-of-type(1) {
+      transform: translateY(7rem);
+    }
+    &:nth-of-type(2) {
+      transform: translateY(14rem);
+    }
+    &:nth-of-type(3) {
+      transform: translateY(21rem);
+    }
+    &.is-inview {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    @include min-l {
+      width: calc(100% * 1/3);
+      height: auto;
+    }
+  }
+
+  .info-content-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    &:hover {
+      .info-content-overlay__image {
+        transform: scale(1.2);
+      }
+      .ic-add_circle {
+        animation: pulse .5s $cubic3;
+      }
+    }
+  }
+
+  .info-content-overlay__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    transition: all .5s $cubic3;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $dark;
+      opacity: .5;
+    }
+  }
+
+  .info-content-overlay__content {
+    position: relative;
+    padding: 0 6.5rem;
+    text-align: center;
+    height: 20rem;
+    @include min-l {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 25rem;
+    }
+  }
+
+  .info-content-overlay__title {
+    color: $light;
+    font-size: 2.6rem;
+    font-weight: $font-weight-regular;
+    padding-bottom: 1rem;
+  }
+
+  .info-content-overlay__text {
+    color: $light;
+    padding-bottom: 4rem;
+  }
+
+  .info-content-overlay__footer {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1.75rem);
+  }
+
+  .ic-add_circle {
+    color: $light;
+    display: inline-block;
+    font-size: 3.5rem;
+    transition: all .3s $cubic3;
+  }
+
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

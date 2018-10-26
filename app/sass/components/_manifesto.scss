@@ -1,0 +1,52 @@
+.manifesto {
+  .manifesto__inner {
+    padding: 12rem 2rem;
+    @include min-l {
+      padding: 10rem 4rem;
+    }
+  }
+
+  .info-content {
+    max-width: 72rem;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transition: all 1s $cubic3;
+    transform: translateY(25%);
+    &.is-inview {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .info-content__header {
+    padding: 1rem 0;
+  }
+
+  .info-content__image {
+    width: 14rem;
+    height: 6.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .info-content__title {
+    font-size: 2.6rem;
+    font-weight: $font-weight-regular;
+    color: $dark;
+  }
+
+  .info-content__body {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .info-content__text {
+    color: $dark;
+
+  }
+
+  .info-content__footer {
+    padding-top: 2rem;
+  }
+
+}

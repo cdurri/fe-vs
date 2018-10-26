@@ -1,0 +1,74 @@
+/* Roboto
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@include font-face($font-roboto, "../fonts/Roboto/Roboto-light", 300, lighter, ttf woff woff2);
+@include font-face($font-roboto, "../fonts/Roboto/Roboto-regular", 400, normal, ttf woff woff2);
+@include font-face($font-roboto, "../fonts/Roboto/Roboto-bold", 700, bold, ttf woff woff2);
+
+
+/* PT Serif
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@include font-face($font-pt-serif, "../fonts/PT_Serif/PT_Serif-Web-Regular", 400, normal, ttf);
+
+/* Icomoon
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: 'icon';
+  src:  url('../fonts/ico-moon/icon.eot?6ee5y4');
+  src:  url('../fonts/ico-moon/icon.eot?6ee5y4#iefix') format('embedded-opentype'),
+    url('../fonts/ico-moon/icon.ttf?6ee5y4') format('truetype'),
+    url('../fonts/ico-moon/icon.woff?6ee5y4') format('woff'),
+    url('../fonts/ico-moon/icon.svg?6ee5y4#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon' !important;
+  speak: none;}
+
+.ic-heart-circle:before {
+  content: "\e916";
+}
+.ic-heart-outline:before {
+  content: "\e904";
+}
+.ic-search:before {
+  content: "\e905";
+}
+.ic-arrow_drop_down:before {
+  content: "\e5c5";
+}
+.ic-person:before {
+  content: "\e7fd";
+}
+.ic-add_circle:before {
+  content: "\e147";
+}
+.ic-arrow-long-right:before {
+  content: "\e902";
+}
+.ic-cart:before {
+  content: "\e93a";
+}
+.ic-location:before {
+  content: "\e947";
+}
+.ic-sphere:before {
+  content: "\e9c9";
+}
+.ic-twitter:before {
+  content: "\e900";
+}
+.ic-facebook:before {
+  content: "\e901";
+}
+.ic-facebook-f:before {
+  content: "\e901";
+}
+.ic-instagram:before {
+  content: "\e914";
+}
+.ic-pinterest-p:before {
+  content: "\e903";
+}

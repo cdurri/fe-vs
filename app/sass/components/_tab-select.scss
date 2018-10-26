@@ -1,0 +1,184 @@
+.tab-select {
+  .tab-select__tab-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .tab-select__header-nav-list-item {
+    position: relative;
+    text-align: center;
+    span {
+      opacity: 0;
+      transition: all .3s $cubic3;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -81%;
+        right: 50%;
+        box-sizing: border-box;
+        border-left: 7px solid transparent;
+        border-bottom: 7px solid $background-primary;
+        border-right: 7px solid transparent;
+        @include min-l {
+          bottom: -70%;
+        }
+      }
+      &.is-active {
+        opacity: 1;
+      }
+    }
+    &.is-active {
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .tab-select__sub-menu {
+    margin-top: auto;
+  }
+
+  .tab-select__sub-menu-list {
+    display: flex;
+  }
+
+  .tab-select__sub-menu-list-item {
+    background: $gray;
+    padding: .8rem 1rem;
+    cursor: pointer;
+    transition: all .3s $cubic3;
+    @include min-s {
+      padding: 1.2rem 3rem;
+    }
+    &:hover {
+      background: darken($gray, 10%);
+    }
+    &:not(:last-child) {
+      margin-right: .2rem;
+    }
+    a {
+      color: $light;
+      font-size: 1.1rem;
+      @include min-s {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .tab-select__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background: $gray-light;
+  }
+
+  .tab-select__body {
+    @extend .fade-out;
+    position: relative;
+    height: 34.9rem;
+    max-width: 116.8rem;
+    margin: 0 auto;
+    top: -.5rem;
+    transition: all .5s $cubic3;
+    &.is-inview {
+      @extend .fade-in;
+    }
+    @include min-s {
+      height: 30.9rem;
+    }
+  }
+
+  .tab-select__tab {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $light;
+    background: $background-primary;
+    text-align: center;
+    padding-top: 5rem;
+    z-index: 0;
+    transition: all .3s $cubic3;
+    &.is-active {
+      z-index: 1000;
+    }
+  }
+
+  .tab-select__headline {
+    font-size: 2.6rem;
+    font-weight: $font-weight-regular;
+    padding-bottom: 3rem;
+  }
+
+  .tab-select__text {
+    padding-bottom: 6rem;
+  }
+
+  .tab-select__header-nav-list {
+    display: flex;
+    li {
+      font-size: 1.2rem;
+      margin-right: 1.5rem;
+      @include min-s {
+        font-size: 1.4rem;
+        margin-right: 5rem;
+      }
+      a {
+        color: $gray-dark;
+      }
+    }
+  }
+
+  .tab-select__footer {
+    .tab-select__footer-inner {
+      @extend .fade-out;
+      position: relative;
+      max-width: 30rem;
+      margin: 0 auto;
+      transform: translateY(7rem);
+      transition: all 1s $cubic3;
+      &.is-inview {
+        @extend .fade-in;
+        transform: translateY(0);
+      }
+      @include min-s {
+        max-width: 54rem;
+      }
+      &:after {
+        content: '';
+        position: relative;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: $background-primary;
+      }
+    }
+    form {
+      padding-top: 6rem;
+    }
+    label {
+      @extend .move-off-screen;
+    }
+    input  {
+      width: 90%;
+      border: none;
+      padding: .5rem 1rem;
+    }
+    .ic-search {
+      position: absolute;
+      font-size: 2.25rem;
+      bottom: .5rem;
+      right: 0;
+    }
+  }
+
+}

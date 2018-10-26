@@ -1,0 +1,31 @@
+%container {
+  width: 100%;
+  max-width: $width-page;
+  margin: 0 auto;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide-up {
+  opacity: 0;
+  height: 0;
+}
+
+.slide-down {
+  opacity: 1;
+  height: auto;
+}
+
+.move-off-screen {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}

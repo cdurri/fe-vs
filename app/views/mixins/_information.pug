@@ -1,0 +1,38 @@
+mixin info-content(title, sub_title, text, cta_text, cta_href, icon_link_text, icon_link, icon_class, image, imageSrc)
+  article.info-content&attributes(attributes)
+    .info-content__header
+      if image
+        .info-content__image-wrapper
+          img.info-content__image(src='/' + imageSrc alt=image)
+      if title
+        h3.info-content__title #{title}
+      if sub_title 
+        h4.info-content__sub-title #{sub_title}
+    .info-content__body
+      if text
+        p.info-content__text #{text}
+    .info-content__footer 
+      if cta_text
+        a.info-content__cta(href=cta_href) #{cta_text}
+      if icon_link_text 
+        a.info-content__icon-link(href=icon_link) #{icon_link_text}
+          if icon_link 
+            span(class=icon_class)
+    block
+
+mixin info-content-overlay(imageSrc, title, text, image_icon, icon_image_link, icon_image_src)
+  article.info-content-overlay&attributes(attributes)
+    if imageSrc
+      .info-content-overlay__image(style="background-image: url('" + imageSrc + "');")
+    .info-content-overlay__content 
+      .info-content__header
+        if title 
+          h3.info-content-overlay__title #{title}
+      .info-content-overlay__body 
+        if text 
+          p.info-content-overlay__text #{text}
+      .info-content-overlay__footer
+        if image_icon
+          a.info-content-overlay__icon-link(href=icon_image_link) 
+            span(class=image_icon)
+      
